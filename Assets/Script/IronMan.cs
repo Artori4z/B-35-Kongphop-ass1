@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class IronMan
 {
-    //name hp sc as flyvoid shootlaservoid isdeadbool takedamageintvoid
     public string IronName;
     public int IronHp;
     public string IronSuitColor;
@@ -12,6 +11,7 @@ public class IronMan
 
     public IronMan(string newName, int newHp, string newSuitColor)
     {
+        //set new name,hp,suitcolor
         IronName = newName;
         IronHp = newHp;
         IronSuitColor = newSuitColor;

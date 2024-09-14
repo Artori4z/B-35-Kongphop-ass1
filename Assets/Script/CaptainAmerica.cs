@@ -11,6 +11,7 @@ public class CaptainAmerica
 
     public CaptainAmerica(string newName,int newHp,string newSuitColor) 
     {
+        //set new name,hp,suitcolor
         CapName = newName;
         CapHp = newHp;
         CapSuitColor = newSuitColor;
