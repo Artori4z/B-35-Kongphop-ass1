@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class IronMan : SuperHero
 {
-    public IronMan(string newName, int newHp, string newSuitColor) : base(newName, newHp, newSuitColor)
-    {
-    }
-
     public void Fly()
     {
         Debug.Log($"--------{name} is Flying!!!");

@@ -2,22 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SuperHero
+public class SuperHero : MonoBehaviour
 {
     //Attributes
-    protected string name;
+    protected string _name;
     public string Name{get{ return name;}set{name = value;}}
     protected int hp;
     public int Hp { get { return hp; } set { hp = value; } }
     public string SuitColor { get; set; }
     private float armorStrength;
-    public SuperHero(string newName, int newHp, string newSuitColor)
-    {
-        //set new name,hp,suitcolor
-        name = newName;
-        hp = newHp;
-        SuitColor = newSuitColor;
-    }
     public void UpdateArmor(float strength)
     {
         armorStrength += strength;
