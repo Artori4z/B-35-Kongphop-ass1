@@ -10,11 +10,12 @@ public class Main : MonoBehaviour
     IronMan ironMan = new IronMan("Tony", 100, "Red");
     void Start()
     {
+        ironMan.Name = ("Bob");
         Debug.Log("*** Superheros fight!!!!");
         Debug.Log($"IronMan name: {ironMan.Name}, Hp: {ironMan.Hp}, Suit Color: {ironMan.SuitColor}");
         Debug.Log($"CaptainAmerica name: {captainAmerica.Name}, Hp: {captainAmerica.Hp}, Suit Color: {captainAmerica.SuitColor}");
         ironMan.UpdateArmor(5.25f);
-        captainAmerica.UpdateArmor(5.25f);
+        captainAmerica.UpdateArmor(5.5f);
     }
     private void Update()
     {

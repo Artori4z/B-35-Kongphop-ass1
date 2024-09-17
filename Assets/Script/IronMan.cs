@@ -10,11 +10,11 @@ public class IronMan : SuperHero
 
     public void Fly()
     {
-        Debug.Log($"--------{Name} is Flying!!!");
+        Debug.Log($"--------{name} is Flying!!!");
     }
     public void ShootLaser()
     {
-        Debug.Log($"========{Name} is Shooting Lasers!");
+        Debug.Log($"========{name} is Shooting Lasers!");
     }
    
 }

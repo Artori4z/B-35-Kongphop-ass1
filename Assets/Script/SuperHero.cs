@@ -5,31 +5,31 @@ using UnityEngine;
 public class SuperHero
 {
     //Attributes
-    public string Name;
-    public int Hp;
-    public string SuitColor;
-    private float armorStrength ;
-
-    //ont
+    protected string name;
+    public string Name{get{ return name;}set{name = value;}}
+    protected int hp;
+    public int Hp { get { return hp; } set { hp = value; } }
+    public string SuitColor { get; set; }
+    private float armorStrength;
     public SuperHero(string newName, int newHp, string newSuitColor)
     {
         //set new name,hp,suitcolor
-        Name = newName;
-        Hp = newHp;
+        name = newName;
+        hp = newHp;
         SuitColor = newSuitColor;
     }
     public void UpdateArmor(float strength)
     {
         armorStrength += strength;
-        Debug.Log($"{Name} undateed their armor to {armorStrength}");
+        Debug.Log($"{name} undateed their armor to {armorStrength}");
     }
     public void TakeDamage(int damage)
     {
-        Hp -= damage;
-        Debug.Log($"{Name} take {damage} damage hp: {Hp}");
+        hp -= damage;
+        Debug.Log($"{name} take {damage} damage hp: {hp}");
     }
     public bool IsDead()
     {
-     return Hp <= 0;
+     return hp <= 0;
     }
 }
