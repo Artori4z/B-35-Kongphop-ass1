@@ -4,27 +4,32 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+    //set cap name,hp,suitcolor
+    CaptainAmerica captainAmerica = new CaptainAmerica("Steve", 100, "Gray");
+    //set ironman name,hp,suitcolor
+    IronMan ironMan = new IronMan("Tony", 100, "Red");
     void Start()
     {
         Debug.Log("*** Superheros fight!!!!");
-        //set cap name,hp,suitcolor
-        CaptainAmerica captainAmerica = new CaptainAmerica("Steve", 100, "Gray");
-        //set ironman name,hp,suitcolor
-        IronMan ironMan = new IronMan("Tony", 100 ,"Red");
-        Debug.Log($"IronMan name: {ironMan.IronName}, Hp: {ironMan.IronHp}, Suit Color: {ironMan.IronSuitColor}");
-        Debug.Log($"CaptainAmerica name: {captainAmerica.CapName}, Hp: {captainAmerica.CapHp}, Suit Color: {captainAmerica.CapSuitColor}");
+        Debug.Log($"IronMan name: {ironMan.Name}, Hp: {ironMan.Hp}, Suit Color: {ironMan.SuitColor}");
+        Debug.Log($"CaptainAmerica name: {captainAmerica.Name}, Hp: {captainAmerica.Hp}, Suit Color: {captainAmerica.SuitColor}");
+        ironMan.UpdateArmor(5.25f);
+        captainAmerica.UpdateArmor(5.25f);
+    }
+    private void Update()
+    {
         //fight process
-        for ( int i = 0; i<5; i++)
+        if ( ironMan.IsDead() || captainAmerica.IsDead())
         {
-            ironMan.ShootLaser();
-            //random damage ironman
-            int randomvalue = Random.Range(10, 21);
-            captainAmerica.TakeDamage(randomvalue);
-            captainAmerica.ThrowShield();
-            //random damage cap
-            randomvalue = Random.Range(10, 21);
-            ironMan.TakeDamage(randomvalue);
+            return;
         }
-        
-    }    
+        ironMan.ShootLaser();
+        //random damage ironman
+        int randomvalue = Random.Range(10, 21);
+        captainAmerica.TakeDamage(randomvalue);
+        captainAmerica.ThrowShield();
+        //random damage cap
+        randomvalue = Random.Range(10, 21);
+        ironMan.TakeDamage(randomvalue);
+    }
 }
