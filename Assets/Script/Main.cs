@@ -11,7 +11,10 @@ public class Main : MonoBehaviour
     public IronMan IronMan;
     void Start()
     {
-        IronMan.Name = ("Bob");
+        IronMan.Name = ("Tony");
+        CaptainAmerica.Name = ("Steve");
+        IronMan.Hp = 100;
+        CaptainAmerica.Hp = 100;
         Debug.Log("*** Superheros fight!!!!");
         Debug.Log($"IronMan name: {IronMan.Name}, Hp: {IronMan.Hp}, Suit Color: {IronMan.SuitColor}");
         Debug.Log($"CaptainAmerica name: {CaptainAmerica.Name}, Hp: {CaptainAmerica.Hp}, Suit Color: {CaptainAmerica.SuitColor}");
@@ -25,11 +28,11 @@ public class Main : MonoBehaviour
         {
             return;
         }
-        IronMan.ShootLaser();
+        IronMan.Move();
         //random damage ironman
         int randomvalue = Random.Range(10, 21);
         CaptainAmerica.TakeDamage(randomvalue);
-        CaptainAmerica.ThrowShield();
+        CaptainAmerica.Move();
         //random damage cap
         randomvalue = Random.Range(10, 21);
         IronMan.TakeDamage(randomvalue);
